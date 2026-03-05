@@ -23,7 +23,7 @@ a{text-decoration:none;color:inherit;}
 .nav-container{max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 
 /* BRAND */
-.brand{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.brand{display:flex;align-items:center;flex-shrink:0;}
 .brand-text{display:flex;flex-direction:column;line-height:1.05;}
 .brand-mercado{font-size:.95rem;font-weight:900;color:#333;}
 .brand-libre{font-size:.95rem;font-weight:900;color:var(--blue);}
@@ -93,9 +93,9 @@ a{text-decoration:none;color:inherit;}
 .banner-arrow.next{right:12px;}
 
 /* QUICK SERVICES */
-.quick-services{background:#fff;border-bottom:1px solid var(--border);}
-.qs-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);border-left:1px solid var(--border);}
-.qs-card{padding:18px 12px;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;transition:background .15s;cursor:pointer;}
+.quick-services{background:#fff;border-bottom:1px solid var(--border);overflow-x:auto;}
+.qs-grid{max-width:1200px;margin:0 auto;display:flex;flex-direction:row;border-left:1px solid var(--border);min-width:600px;}
+.qs-card{flex:1;min-width:130px;padding:18px 10px;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;transition:background .15s;cursor:pointer;}
 .qs-card:hover{background:#fffde7;}
 .qs-card strong{font-size:.82rem;color:#333;font-weight:800;}
 .qs-card p{font-size:.75rem;color:var(--muted);line-height:1.4;}
@@ -193,3 +193,6 @@ footer{background:#1a1a2e;color:#aaa;}
   background: #fff;
   display: block;
 }
+
+/* BRAND LOGO REAL */
+.brand-img { height: 46px; width: auto; display: block; }
