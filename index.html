@@ -4,404 +4,127 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MercadoLibre Colombia – Envíos a todo el país</title>
-  <link rel="stylesheet" href="css/styles.css"/>
+
+  <!-- CSS CORREGIDO -->
+  <link rel="stylesheet" href="styles.css"/>
+
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
 <header id="navbar">
   <div class="nav-top">
     <div class="nav-container">
+
       <a href="#" class="brand">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MercadoLibre_new.svg/320px-MercadoLibre_new.svg.png" alt="MercadoLibre" class="brand-img"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MercadoLibre_new.svg/320px-MercadoLibre_new.svg.png" class="brand-img"/>
       </a>
+
       <div class="nav-location">
-        <svg width="13" height="13" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#3483fa"/></svg>
-        <span>Ingresa tu<br/><strong>ubicación</strong></span>
+        <span>Ingresa tu <strong>ubicación</strong></span>
       </div>
-      <nav class="nav-cats-top">
-        <a href="#" class="nav-cat-link">Categorías ▾</a>
-        <a href="#" class="nav-cat-link">Ofertas</a>
-        <a href="#" class="nav-cat-link">Cupones</a>
-        <a href="#" class="nav-cat-link">Supermercado <span class="badge-nuevo">NUEVO</span></a>
-        <a href="#" class="nav-cat-link">Moda</a>
-        <a href="#" class="nav-cat-link">Vender</a>
-        <a href="#" class="nav-cat-link">Ayuda / PQR</a>
-      </nav>
+
       <div class="search-wrapper">
+
         <form class="search-form" onsubmit="handleSearch(event)">
-          <input type="text" id="search-input" class="search-input" placeholder="Buscar productos, marcas y más..."/>
-          <button type="submit" class="search-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2.5"/><path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <input 
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Buscar productos, marcas y más..."
+          />
+
+          <button class="search-btn">
+            🔍
           </button>
         </form>
-        <div class="search-suggestions" id="search-suggestions"></div>
+
+        <div id="search-suggestions" class="search-suggestions"></div>
+
       </div>
-      <nav class="nav-actions">
-        <a href="#" class="nav-link">Crea tu cuenta</a>
-        <a href="#" class="nav-link">Ingresa</a>
-        <a href="#" class="nav-link">Mis compras</a>
-        <a href="#" class="nav-link nav-cart">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.8"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.8"/><path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.8"/></svg>
-          <span class="cart-badge" id="cart-badge">0</span>
-        </a>
-      </nav>
+
+      <div class="nav-icons">
+        <div class="cart">
+          🛒
+          <span id="cart-badge">0</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </header>
 
-<!-- BANNER AMARILLO como el original -->
-<section class="hero-banner">
-  <div class="banner-slider" id="banner-slider">
-    <div class="banner-slide active" style="background:linear-gradient(150deg,#FFE600 55%,#ffd000 100%);">
-      <div class="banner-prod-left">
-        <div class="banner-tag-prod">
-          <p class="tag-cat">PORTÁTIL ASUS 8GB RAM 512GB</p>
-          <p class="tag-cuotas">6 cuotas de <s>$283.166</s></p>
-          <p class="tag-price">$229.983</p>
-          <p class="tag-interes">con 0% interés</p>
-        </div>
-        <svg viewBox="0 0 170 140" class="banner-prod-svg"><rect x="15" y="10" width="140" height="96" rx="6" fill="#222"/><rect x="21" y="16" width="128" height="84" rx="3" fill="#3483fa" opacity="0.9"/><rect x="31" y="26" width="108" height="56" rx="2" fill="#5ba3ff" opacity="0.4"/><rect x="5" y="106" width="160" height="14" rx="5" fill="#333"/><rect x="60" y="112" width="50" height="6" rx="3" fill="#555"/></svg>
-      </div>
-      <div class="banner-center-content">
-        <div class="banner-event">3/3 FECHAS DOBLES</div>
-        <h1 class="banner-title">Los más vendidos</h1>
-        <div class="banner-offer-wrap">
-          <div class="banner-offer-box">
-            <span class="offer-label">HASTA</span>
-            <strong class="offer-pct">50%OFF</strong>
-          </div>
-          <div class="banner-offer-box" style="border:2px solid #1a1a2e;">
-            <span class="offer-label">HASTA</span>
-            <strong class="offer-pct" style="font-size:1.2rem;">12 CUOTAS</strong>
-            <span style="font-size:.75rem;font-weight:700;">0% INTERÉS</span>
-          </div>
-        </div>
-      </div>
-      <div class="banner-prod-right">
-        <div class="banner-tag-prod">
-          <p class="tag-cat">TELEVISOR 43" SMART GOOGLE TV</p>
-          <p class="tag-cuotas">6 cuotas de <s>$233.000</s></p>
-          <p class="tag-price">$166.900</p>
-          <p class="tag-interes">con 0% interés</p>
-        </div>
-        <svg viewBox="0 0 170 130" class="banner-prod-svg"><rect x="8" y="8" width="154" height="90" rx="6" fill="#111"/><rect x="14" y="14" width="142" height="78" rx="3" fill="#0d47a1"/><rect x="24" y="22" width="122" height="58" rx="2" fill="#1565c0" opacity="0.6"/><rect x="66" y="98" width="38" height="12" rx="3" fill="#333"/><rect x="46" y="110" width="78" height="7" rx="3" fill="#222"/></svg>
-      </div>
-    </div>
 
-    <div class="banner-slide" style="background:linear-gradient(150deg,#FFE600 55%,#ffd000 100%);">
-      <div class="banner-prod-left">
-        <div class="banner-tag-prod">
-          <p class="tag-cat">SAMSUNG GALAXY A55 5G 128GB</p>
-          <p class="tag-cuotas">12 cuotas de <s>$158.250</s></p>
-          <p class="tag-price">$1.299.000</p>
-          <p class="tag-interes">con 0% interés</p>
-        </div>
-        <svg viewBox="0 0 110 170" class="banner-prod-svg"><rect x="15" y="5" width="80" height="150" rx="14" fill="#111" stroke="#333" stroke-width="2"/><rect x="21" y="14" width="68" height="124" rx="5" fill="#3483fa"/><rect x="30" y="22" width="50" height="38" rx="2" fill="#5ba3ff" opacity="0.5"/><rect x="42" y="146" width="26" height="5" rx="2" fill="#333"/></svg>
-      </div>
-      <div class="banner-center-content">
-        <div class="banner-event" style="background:#1a9e5c;color:#fff;">ENVÍO GRATIS</div>
-        <h1 class="banner-title">Tecnología top</h1>
-        <div class="banner-offer-wrap">
-          <div class="banner-offer-box">
-            <span class="offer-label">HASTA</span>
-            <strong class="offer-pct">30%OFF</strong>
-          </div>
-          <div class="banner-offer-box" style="border:2px solid #1a1a2e;">
-            <span class="offer-label">HASTA</span>
-            <strong class="offer-pct" style="font-size:1.2rem;">12 CUOTAS</strong>
-            <span style="font-size:.75rem;font-weight:700;">0% INTERÉS</span>
-          </div>
-        </div>
-      </div>
-      <div class="banner-prod-right">
-        <div class="banner-tag-prod">
-          <p class="tag-cat">AUDÍFONOS SONY WH-1000XM5</p>
-          <p class="tag-cuotas">12 cuotas de <s>$108.250</s></p>
-          <p class="tag-price">$899.000</p>
-          <p class="tag-interes">con 0% interés</p>
-        </div>
-        <svg viewBox="0 0 140 130" class="banner-prod-svg"><path d="M20 65 A50 50 0 0 1 120 65" stroke="#111" stroke-width="11" fill="none" stroke-linecap="round"/><rect x="7" y="58" width="22" height="38" rx="11" fill="#111"/><rect x="111" y="58" width="22" height="38" rx="11" fill="#111"/><circle cx="18" cy="77" r="15" fill="#2d2d2d" stroke="#444" stroke-width="2"/><circle cx="122" cy="77" r="15" fill="#2d2d2d" stroke="#444" stroke-width="2"/><circle cx="18" cy="77" r="7" fill="#3483fa"/><circle cx="122" cy="77" r="7" fill="#3483fa"/></svg>
-      </div>
-    </div>
+<!-- BANNER -->
+<section class="banner">
 
-    <div class="banner-slide" style="background:linear-gradient(150deg,#FFE600 55%,#ffd000 100%);">
-      <div class="banner-prod-left">
-        <div class="banner-tag-prod">
-          <p class="tag-cat">APPLE WATCH SERIES 9 GPS 41MM</p>
-          <p class="tag-cuotas">12 cuotas de <s>$166.583</s></p>
-          <p class="tag-price">$1.599.000</p>
-          <p class="tag-interes">con 0% interés</p>
-        </div>
-        <svg viewBox="0 0 110 145" class="banner-prod-svg"><rect x="22" y="10" width="66" height="112" rx="16" fill="#111" stroke="#333" stroke-width="2"/><rect x="28" y="18" width="54" height="96" rx="12" fill="#1a1a2e"/><circle cx="55" cy="66" r="24" fill="#3483fa" opacity="0.8"/><rect x="40" y="8" width="30" height="6" rx="3" fill="#333"/><rect x="16" y="46" width="6" height="18" rx="3" fill="#333"/></svg>
-      </div>
-      <div class="banner-center-content">
-        <div class="banner-event" style="background:#ff4040;color:#fff;">SÚPER OFERTA</div>
-        <h1 class="banner-title">Último día</h1>
-        <div class="banner-offer-wrap">
-          <div class="banner-offer-box">
-            <span class="offer-label">HASTA</span>
-            <strong class="offer-pct">40%OFF</strong>
-          </div>
-          <div class="banner-offer-box" style="border:2px solid #1a1a2e;">
-            <span class="offer-label">HASTA</span>
-            <strong class="offer-pct" style="font-size:1.2rem;">12 CUOTAS</strong>
-            <span style="font-size:.75rem;font-weight:700;">0% INTERÉS</span>
-          </div>
-        </div>
-      </div>
-      <div class="banner-prod-right">
-        <div class="banner-tag-prod">
-          <p class="tag-cat">CÁMARA CANON EOS R50 MIRRORLESS</p>
-          <p class="tag-cuotas">12 cuotas de <s>$291.583</s></p>
-          <p class="tag-price">$2.624.250</p>
-          <p class="tag-interes">con 0% interés</p>
-        </div>
-        <svg viewBox="0 0 150 118" class="banner-prod-svg"><rect x="12" y="16" width="126" height="88" rx="8" fill="#222" stroke="#444" stroke-width="2"/><circle cx="75" cy="60" r="30" fill="#3d3d3d" stroke="#555" stroke-width="3"/><circle cx="75" cy="60" r="19" fill="#3483fa" opacity="0.7"/><circle cx="75" cy="60" r="7" fill="#111"/><rect x="95" y="16" width="36" height="26" rx="5" fill="#444"/><rect x="8" y="28" width="16" height="12" rx="4" fill="#333"/></svg>
-      </div>
-    </div>
+  <div class="banner-slide active">
+    <h2>Ofertas increíbles</h2>
   </div>
-  <button class="banner-arrow prev" onclick="prevSlide()">&#8249;</button>
-  <button class="banner-arrow next" onclick="nextSlide()">&#8250;</button>
-  <div class="banner-dots">
-    <button class="dot active" onclick="goToSlide(0)"></button>
-    <button class="dot" onclick="goToSlide(1)"></button>
-    <button class="dot" onclick="goToSlide(2)"></button>
+
+  <div class="banner-slide">
+    <h2>Descuentos en tecnología</h2>
   </div>
+
+  <div class="banner-slide">
+    <h2>Envíos gratis a todo el país</h2>
+  </div>
+
 </section>
 
-<!-- SERVICIOS RÁPIDOS -->
-<section class="quick-services">
-  <div class="qs-grid">
-    <div class="qs-card">
-      <strong>Envío gratis</strong>
-      <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><path d="M8 30h42v24a2 2 0 01-2 2H10a2 2 0 01-2-2V30z" stroke="#333" stroke-width="1.8" fill="none"/><path d="M8 30l5-12h32l5 12" stroke="#FFD600" stroke-width="2" fill="none"/><path d="M50 40h10l8 10" stroke="#333" stroke-width="1.8" fill="none"/><circle cx="18" cy="56" r="6" stroke="#333" stroke-width="1.8" fill="none"/><circle cx="40" cy="56" r="6" stroke="#333" stroke-width="1.8" fill="none"/></svg>
-      <p>Beneficio por ser tu primera compra.</p>
-      <a href="#" class="qs-link">Mostrar productos</a>
-    </div>
-    <div class="qs-card">
-      <strong>Ingresa a tu cuenta</strong>
-      <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><rect x="10" y="14" width="50" height="38" rx="4" stroke="#333" stroke-width="1.8" fill="none"/><rect x="16" y="20" width="38" height="26" rx="2" fill="#FFD600" opacity="0.25"/><circle cx="35" cy="30" r="8" stroke="#333" stroke-width="1.8" fill="none"/><path d="M20 50c0-8 6.7-11 15-11s15 3 15 11" stroke="#333" stroke-width="1.8" fill="none"/></svg>
-      <p>Disfruta de ofertas y compra sin límites.</p>
-      <a href="#" class="qs-link">Ingresar a tu cuenta</a>
-    </div>
-    <div class="qs-card">
-      <strong>Ingresa tu ubicación</strong>
-      <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><path d="M35 8C24.5 8 16 16.5 16 27c0 15 19 35 19 35s19-20 19-35C54 16.5 45.5 8 35 8z" stroke="#333" stroke-width="1.8" fill="none"/><circle cx="35" cy="27" r="7" stroke="#333" stroke-width="1.8" fill="none"/></svg>
-      <p>Consulta costos y tiempos de entrega.</p>
-      <a href="#" class="qs-link">Ingresar ubicación</a>
-    </div>
-    <div class="qs-card">
-      <strong>Medios de pago</strong>
-      <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><rect x="8" y="18" width="54" height="34" rx="5" stroke="#333" stroke-width="1.8" fill="none"/><rect x="8" y="28" width="54" height="10" fill="#FFD600" opacity="0.3"/><rect x="16" y="40" width="16" height="5" rx="2" stroke="#333" stroke-width="1.5" fill="none"/><circle cx="48" cy="42" r="5" stroke="#333" stroke-width="1.5" fill="none"/><circle cx="54" cy="42" r="5" stroke="#FFD600" stroke-width="1.5" fill="none"/></svg>
-      <p>Paga tus compras de forma rápida y segura.</p>
-      <a href="#" class="qs-link">Conocer medios de pago</a>
-    </div>
-    <div class="qs-card">
-      <strong>Menos de $40.000</strong>
-      <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><circle cx="35" cy="35" r="26" stroke="#333" stroke-width="1.8" fill="none"/><path d="M35 18v4M35 48v4M22 30h5c0-4 3-5 5-5h6c2.5 0 5 2 5 5 0 6-14 6-14 12 0 2.5 2 5 5 5h8" stroke="#333" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
-      <p>Descubre productos con precios bajos.</p>
-      <a href="#" class="qs-link">Mostrar productos</a>
-    </div>
-    <div class="qs-card">
-      <strong>Más vendidos</strong>
-      <svg width="70" height="70" viewBox="0 0 70 70" fill="none"><path d="M35 8l5 10.5 11.5 1.7-8.3 8.1 2 11.5L35 34.5l-10.2 5.3 2-11.5-8.3-8.1L30 18.5z" stroke="#333" stroke-width="1.8" fill="none"/><rect x="16" y="50" width="38" height="4" rx="2" stroke="#333" stroke-width="1.5" fill="none"/><rect x="22" y="58" width="26" height="4" rx="2" stroke="#FFD600" stroke-width="1.5" fill="none"/></svg>
-      <p>Explora los productos que son tendencia.</p>
-      <a href="#" class="qs-link">Ir a Más vendidos</a>
-    </div>
-  </div>
-</section>
 
-<!-- BÚSQUEDA RÁPIDA -->
-<section class="search-section" id="buscador">
-  <div class="container">
-    <h2 class="section-title">¿Qué estás buscando hoy?</h2>
-    <div class="quick-categories">
-      <button class="quick-cat" onclick="quickSearch('Smartphones')">Smartphones</button>
-      <button class="quick-cat" onclick="quickSearch('Laptops')">Laptops</button>
-      <button class="quick-cat" onclick="quickSearch('Zapatos')">Zapatos</button>
-      <button class="quick-cat" onclick="quickSearch('Televisores')">Televisores</button>
-      <button class="quick-cat" onclick="quickSearch('Audifonos')">Audífonos</button>
-      <button class="quick-cat" onclick="quickSearch('Camaras')">Cámaras</button>
-      <button class="quick-cat" onclick="quickSearch('Juguetes')">Juguetes</button>
-      <button class="quick-cat" onclick="quickSearch('Ropa')">Ropa</button>
-    </div>
-    <div id="search-results" style="display:none;margin-top:24px;">
-      <h3 id="search-results-title" style="margin-bottom:16px;color:#666;font-size:1rem;font-weight:600;"></h3>
-      <div class="products-grid" id="search-results-grid"></div>
-    </div>
-  </div>
-</section>
 
 <!-- PRODUCTOS -->
-<section class="section" id="productos">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Productos destacados</h2>
-      <a href="#" class="see-all">Ver todos →</a>
+<section class="products">
+
+  <article class="product-card">
+    <div class="product-img">📱</div>
+    <div class="product-info">
+      <p class="product-name">Smartphone Samsung Galaxy</p>
+      <p class="product-price">$1.299.000</p>
+
+      <button onclick="addToCart('Samsung Galaxy')" class="btn-add-cart">
+        Agregar al carrito
+      </button>
+
     </div>
-    <div class="products-grid">
-      <article class="product-card reveal">
-        <div class="product-badge">Más vendido</div>
-        <div class="product-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Samsung_Galaxy_A55_5G_%28SM-A556E%29.jpg/250px-Samsung_Galaxy_A55_5G_%28SM-A556E%29.jpg" alt="Samsung Galaxy A55" class="product-real-img" onerror="this.style.display='none'"/></div>
-        <div class="product-info">
-          <p class="product-name">Smartphone Samsung Galaxy A55 5G 128GB</p>
-          <div class="product-rating">★★★★★ <span>(1.2k)</span></div>
-          <p class="product-price-old">$1.899.000</p>
-          <p class="product-price">$1.299.000</p>
-          <p class="product-shipping">Envío gratis</p>
-          <p class="product-cuotas">en 12 cuotas de $108.250</p>
-          <button class="btn-add-cart" onclick="addToCart('Samsung Galaxy A55')">Agregar al carrito</button>
-        </div>
-      </article>
-      <article class="product-card reveal">
-        <div class="product-badge offer">-30%</div>
-        <div class="product-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Lenovo-ThinkPad-T420.jpg/320px-Lenovo-ThinkPad-T420.jpg" alt="Laptop Lenovo IdeaPad" class="product-real-img" onerror="this.style.display='none'"/></div>
-        <div class="product-info">
-          <p class="product-name">Laptop Lenovo IdeaPad 3 Core i5 8GB RAM 512GB SSD</p>
-          <div class="product-rating">★★★★☆ <span>(856)</span></div>
-          <p class="product-price-old">$2.499.000</p>
-          <p class="product-price">$1.749.000</p>
-          <p class="product-shipping">Envío gratis</p>
-          <p class="product-cuotas">en 12 cuotas de $145.750</p>
-          <button class="btn-add-cart" onclick="addToCart('Lenovo IdeaPad')">Agregar al carrito</button>
-        </div>
-      </article>
-      <article class="product-card reveal">
-        <div class="product-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/WH-1000XM4_%28cropped%29.jpg/220px-WH-1000XM4_%28cropped%29.jpg" alt="Sony WH-1000XM5" class="product-real-img" onerror="this.style.display='none'"/></div>
-        <div class="product-info">
-          <p class="product-name">Audífonos Sony WH-1000XM5 Noise Cancelling Inalámbricos</p>
-          <div class="product-rating">★★★★★ <span>(2.1k)</span></div>
-          <p class="product-price-old">$1.299.000</p>
-          <p class="product-price">$899.000</p>
-          <p class="product-shipping">Envío gratis</p>
-          <p class="product-cuotas">en 12 cuotas de $74.916</p>
-          <button class="btn-add-cart" onclick="addToCart('Sony WH-1000XM5')">Agregar al carrito</button>
-        </div>
-      </article>
-      <article class="product-card reveal">
-        <div class="product-badge">Oferta</div>
-        <div class="product-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Samsung_Smart_TV.jpg/320px-Samsung_Smart_TV.jpg" alt="Smart TV Samsung 55" class="product-real-img" onerror="this.style.display='none'"/></div>
-        <div class="product-info">
-          <p class="product-name">Smart TV Samsung 55" 4K QLED Crystal UHD 2024</p>
-          <div class="product-rating">★★★★★ <span>(743)</span></div>
-          <p class="product-price-old">$3.199.000</p>
-          <p class="product-price">$2.299.000</p>
-          <p class="product-shipping">Envío gratis</p>
-          <p class="product-cuotas">en 12 cuotas de $191.583</p>
-          <button class="btn-add-cart" onclick="addToCart('Samsung TV 55')">Agregar al carrito</button>
-        </div>
-      </article>
-      <article class="product-card reveal">
-        <div class="product-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Apple_Watch_Series_6.jpg/220px-Apple_Watch_Series_6.jpg" alt="Apple Watch Series 9" class="product-real-img" onerror="this.style.display='none'"/></div>
-        <div class="product-info">
-          <p class="product-name">Smartwatch Apple Watch Series 9 GPS 41mm</p>
-          <div class="product-rating">★★★★★ <span>(3.4k)</span></div>
-          <p class="product-price-old">$1.999.000</p>
-          <p class="product-price">$1.599.000</p>
-          <p class="product-shipping">Envío gratis</p>
-          <p class="product-cuotas">en 12 cuotas de $133.250</p>
-          <button class="btn-add-cart" onclick="addToCart('Apple Watch S9')">Agregar al carrito</button>
-        </div>
-      </article>
-      <article class="product-card reveal">
-        <div class="product-badge offer">-25%</div>
-        <div class="product-img-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Canon_EOS_250D_%2848421896716%29.jpg/320px-Canon_EOS_250D_%2848421896716%29.jpg" alt="Canon EOS R50" class="product-real-img" onerror="this.style.display='none'"/></div>
-        <div class="product-info">
-          <p class="product-name">Cámara Canon EOS R50 Mirrorless 24.2MP Kit 18-45mm</p>
-          <div class="product-rating">★★★★☆ <span>(421)</span></div>
-          <p class="product-price-old">$3.499.000</p>
-          <p class="product-price">$2.624.250</p>
-          <p class="product-shipping">Envío gratis</p>
-          <p class="product-cuotas">en 12 cuotas de $218.687</p>
-          <button class="btn-add-cart" onclick="addToCart('Canon EOS R50')">Agregar al carrito</button>
-        </div>
-      </article>
+  </article>
+
+
+  <article class="product-card">
+    <div class="product-img">💻</div>
+    <div class="product-info">
+      <p class="product-name">Laptop Lenovo</p>
+      <p class="product-price">$1.749.000</p>
+
+      <button onclick="addToCart('Laptop Lenovo')" class="btn-add-cart">
+        Agregar al carrito
+      </button>
+
     </div>
-  </div>
+  </article>
+
 </section>
 
-<!-- SERVICIOS -->
-<section class="section section-services" id="servicios">
-  <div class="container">
-    <h2 class="section-title">Nuestros servicios</h2>
-    <div class="services-grid">
-      <div class="service-card reveal"><svg class="service-svg" viewBox="0 0 60 60"><path d="M4 28h40v22a2 2 0 01-2 2H6a2 2 0 01-2-2V28z" stroke="#3483fa" stroke-width="2" fill="none"/><path d="M4 28l4-10h32l4 10" stroke="#3483fa" stroke-width="2" fill="none"/><circle cx="16" cy="52" r="5" stroke="#3483fa" stroke-width="2" fill="none"/><circle cx="36" cy="52" r="5" stroke="#3483fa" stroke-width="2" fill="none"/></svg><h3>Envío gratis</h3><p>En miles de productos a todo Colombia.</p></div>
-      <div class="service-card reveal"><svg class="service-svg" viewBox="0 0 60 60"><rect x="6" y="14" width="48" height="32" rx="4" stroke="#1a9e5c" stroke-width="2" fill="none"/><rect x="6" y="22" width="48" height="8" fill="#1a9e5c" opacity="0.2"/><rect x="12" y="36" width="14" height="4" rx="2" stroke="#1a9e5c" stroke-width="1.5" fill="none"/></svg><h3>Cuotas sin interés</h3><p>Hasta 12 cuotas sin interés con todas las tarjetas.</p></div>
-      <div class="service-card reveal"><svg class="service-svg" viewBox="0 0 60 60"><rect x="10" y="20" width="40" height="26" rx="3" stroke="#ff9800" stroke-width="2" fill="none"/><path d="M18 20v-4a12 12 0 0124 0v4" stroke="#ff9800" stroke-width="2" fill="none"/><circle cx="30" cy="33" r="4" fill="#ff9800"/></svg><h3>Compra segura</h3><p>Tu dinero protegido hasta recibir el producto.</p></div>
-      <div class="service-card reveal"><svg class="service-svg" viewBox="0 0 60 60"><path d="M30 8l4.5 9 10 1.5-7.25 7 1.75 10L30 31l-9 5.5 1.75-10-7.25-7 10-1.5z" stroke="#FFD600" stroke-width="2" fill="none"/></svg><h3>Vendedores verificados</h3><p>Más de 1 millón con calificaciones reales.</p></div>
-      <div class="service-card reveal"><svg class="service-svg" viewBox="0 0 60 60"><rect x="8" y="20" width="30" height="26" rx="2" stroke="#9c27b0" stroke-width="2" fill="none"/><path d="M8 20l4-8h22l4 8" stroke="#9c27b0" stroke-width="2" fill="none"/><path d="M38 28h14v18H38" stroke="#9c27b0" stroke-width="2" fill="none"/></svg><h3>Mercado Shops</h3><p>Crea tu tienda online gratis.</p></div>
-      <div class="service-card reveal"><svg class="service-svg" viewBox="0 0 60 60"><circle cx="30" cy="30" r="22" stroke="#3483fa" stroke-width="2" fill="none"/><path d="M30 16v4M30 40v4M20 26h4c0-3 3-4 4-4h4c2 0 4 2 4 4 0 5-12 5-12 10 0 2 2 4 4 4h6" stroke="#3483fa" stroke-width="2" stroke-linecap="round" fill="none"/></svg><h3>Mercado Pago</h3><p>La billetera digital más usada de Colombia.</p></div>
-    </div>
-  </div>
+
+
+<!-- RESULTADOS DE BÚSQUEDA -->
+<section id="search-results" style="display:none">
+
+  <h2 id="search-results-title"></h2>
+
+  <div id="search-results-grid"></div>
+
 </section>
 
-<!-- PORTAFOLIO -->
-<section class="section section-portfolio" id="portafolio">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Equipo de desarrollo</h2>
-    </div>
-    <div class="portfolio-grid">
-      <article class="dev-card reveal">
-        <div class="dev-avatar" style="background:linear-gradient(135deg,#FFE600,#ffb800);color:#333;">BR</div>
-        <h3>Bryan Ramírez</h3><p class="dev-role">Frontend Developer</p>
-        <p class="dev-desc">Encargado del navbar, buscador y estructura general del proyecto.</p>
-        <div class="dev-services"><span>Navbar</span><span>Buscador</span><span>UI</span></div>
-        <div class="dev-techs"><span class="tech">HTML5</span><span class="tech">CSS3</span><span class="tech">JavaScript</span><span class="tech">Git</span></div>
-        <a href="https://github.com/vxillaxl" target="_blank" class="dev-github"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> github.com/vxillaxl</a>
-      </article>
-      <article class="dev-card reveal">
-        <div class="dev-avatar" style="background:linear-gradient(135deg,#3483fa,#1a5cbf);">BR</div>
-        <h3>Bryan Ramírez</h3><p class="dev-role">Full Stack Developer</p>
-        <p class="dev-desc">Responsable de productos destacados, carrito de compras y búsqueda con filtros dinámicos.</p>
-        <div class="dev-services"><span>Productos</span><span>Carrito</span><span>Filtros</span></div>
-        <div class="dev-techs"><span class="tech">JavaScript</span><span class="tech">HTML5</span><span class="tech">CSS3</span><span class="tech">Git</span></div>
-        <a href="https://github.com/vxillaxl" target="_blank" class="dev-github"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> github.com/vxillaxl</a>
-      </article>
-      <article class="dev-card reveal">
-        <div class="dev-avatar" style="background:linear-gradient(135deg,#1a9e5c,#0d7a45);">BR</div>
-        <h3>Bryan Ramírez</h3><p class="dev-role">UI/UX Developer</p>
-        <p class="dev-desc">Diseño visual, animaciones, sección de servicios y experiencia responsive en todos los dispositivos.</p>
-        <div class="dev-services"><span>Animaciones</span><span>Servicios</span><span>CSS</span></div>
-        <div class="dev-techs"><span class="tech">CSS3</span><span class="tech">HTML5</span><span class="tech">JavaScript</span><span class="tech">Git</span></div>
-        <a href="https://github.com/vxillaxl" target="_blank" class="dev-github"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> github.com/vxillaxl</a>
-      </article>
-      <article class="dev-card reveal">
-        <div class="dev-avatar" style="background:linear-gradient(135deg,#ff6b6b,#cc2200);">BR</div>
-        <h3>Bryan Ramírez</h3><p class="dev-role">Backend Developer</p>
-        <p class="dev-desc">Banner interactivo con slider, portafolio de desarrolladores, footer y gestión de Git Flow.</p>
-        <div class="dev-services"><span>Banner</span><span>Portafolio</span><span>Footer</span></div>
-        <div class="dev-techs"><span class="tech">JavaScript</span><span class="tech">HTML5</span><span class="tech">CSS3</span><span class="tech">Git</span></div>
-        <a href="https://github.com/vxillaxl" target="_blank" class="dev-github"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg> github.com/vxillaxl</a>
-      </article>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer id="footer">
-  <div class="footer-top">
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <div class="footer-logo">
-          <svg width="34" height="34" viewBox="0 0 52 52"><circle cx="26" cy="26" r="26" fill="#FFE600"/><path d="M16 29c0-2.8 2.2-5 5-5 1.4 0 2.6.5 3.5 1.4.9-.9 2.1-1.4 3.5-1.4 2.8 0 5 2.2 5 5v6h-3v-6c0-1.1-.9-2-2-2s-2 .9-2 2v6h-3v-6c0-1.1-.9-2-2-2s-2 .9-2 2v6h-3v-6z" fill="#333"/></svg>
-          <span><b style="color:#fff;">mercado</b><b style="color:#3483fa;">libre</b></span>
-        </div>
-        <p>La comunidad de e-commerce más grande de Colombia y América Latina.</p>
-      </div>
-      <div class="footer-col"><h4>Sobre MercadoLibre</h4><a href="#">Acerca de</a><a href="#">Inversores</a><a href="#">Trabaja con nosotros</a><a href="#">Prensa</a></div>
-      <div class="footer-col"><h4>Otros sitios</h4><a href="#">Mercado Pago</a><a href="#">Mercado Shops</a><a href="#">Mercado Ads</a><a href="#">Mercado Envíos</a></div>
-      <div class="footer-col"><h4>Ayuda</h4><a href="#">Centro de ayuda</a><a href="#">Resolución de problemas</a><a href="#">Seguridad</a><a href="#">Contacto</a></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container"><p>© 2024 MercadoLibre S.R.L. · Proyecto académico — Bryan Alexander Ramírez Benavides · UCC Pasto</p></div>
-  </div>
-</footer>
 
-<div class="toast" id="toast"></div>
-<script src="js/app.js"></script>
+<div id="toast"></div>
+
+
+<!-- JS CORREGIDO -->
+<script src="app.js"></script>
+
 </body>
 </html>
