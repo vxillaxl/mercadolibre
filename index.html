@@ -14,7 +14,10 @@
     <div class="nav-top">
       <div class="nav-container">
         <a href="#" class="brand">
-          <span class="brand-mercado">mercado</span><span class="brand-libre">libre</span>
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="22" fill="#FFE600"/><path d="M14 24c0-2 1.5-3.5 3.5-3.5S21 22 21 24v4h2v-4c0-2 1.5-3.5 3.5-3.5S30 22 30 24v4h2v-4c0-3.3-2.7-6-6-6-.9 0-1.8.2-2.5.6-.9-.9-2.2-1.5-3.5-1.5C17.1 17.1 14 20 14 24v4h2v-4z" fill="#333"/></svg>
+          <div class="brand-text">
+            <span class="brand-mercado">mercado</span><span class="brand-libre">libre</span>
+          </div>
         </a>
         <div class="search-wrapper">
           <form class="search-form" id="search-form" onsubmit="handleSearch(event)">
@@ -54,33 +57,91 @@
   <!-- ===== HERO BANNER ===== -->
   <section class="hero-banner">
     <div class="banner-slider" id="banner-slider">
-      <div class="banner-slide active" style="background: linear-gradient(135deg, #ffe600 0%, #ffb800 100%);">
-        <div class="banner-content">
-          <span class="banner-tag">🔥 Envío gratis</span>
-          <h1>Tecnología al mejor precio</h1>
-          <p>Smartphones, laptops y más con envío gratis a todo Colombia</p>
-          <button class="banner-btn" onclick="addToCart('Smartphone Samsung')">Ver ofertas</button>
+
+      <!-- Slide 1 -->
+      <div class="banner-slide active" style="background: linear-gradient(120deg, #1a0050 0%, #2d0080 50%, #1a0050 100%);">
+        <div class="banner-products-left">
+          <div class="banner-product-tag">
+            <span class="tag-name">PORTÁTIL ASUS 8GB RAM 512GB</span>
+            <span class="tag-cuotas">6 cuotas de <s>$283.166</s></span>
+            <span class="tag-price">$229.983</span>
+            <span class="tag-interes">con 0% interés</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=220&h=180&fit=crop" class="banner-prod-img" alt="Laptop"/>
         </div>
-        <div class="banner-image">📱</div>
-      </div>
-      <div class="banner-slide" style="background: linear-gradient(135deg, #1a9e5c 0%, #0d7a45 100%);">
-        <div class="banner-content">
-          <span class="banner-tag">💳 Cuotas sin interés</span>
-          <h1>Moda para todos</h1>
-          <p>Ropa, zapatos y accesorios con hasta 12 cuotas sin interés</p>
-          <button class="banner-btn">Descubrir</button>
+        <div class="banner-center">
+          <div class="banner-event-tag">3/3 FECHAS DOBLES</div>
+          <h1 class="banner-main-title">Los más vendidos</h1>
+          <div class="banner-discount">50%DCTO</div>
+          <button class="banner-btn">Ver ofertas</button>
         </div>
-        <div class="banner-image">👗</div>
+        <div class="banner-products-right">
+          <div class="banner-product-tag">
+            <span class="tag-name">TELEVISOR 43" SMART GOOGLE TV</span>
+            <span class="tag-cuotas">6 cuotas de <s>$233.000</s></span>
+            <span class="tag-price">$166.900</span>
+            <span class="tag-interes">con 0% interés</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f4834c?w=220&h=180&fit=crop" class="banner-prod-img" alt="TV"/>
+        </div>
       </div>
-      <div class="banner-slide" style="background: linear-gradient(135deg, #3483fa 0%, #1a5cbf 100%);">
-        <div class="banner-content">
-          <span class="banner-tag">⚡ Súper oferta</span>
-          <h1>Electrónica en oferta</h1>
-          <p>Hasta 50% de descuento en productos seleccionados</p>
+
+      <!-- Slide 2 -->
+      <div class="banner-slide" style="background: linear-gradient(120deg, #003d1a 0%, #006629 50%, #003d1a 100%);">
+        <div class="banner-products-left">
+          <div class="banner-product-tag">
+            <span class="tag-name">SMARTPHONE SAMSUNG GALAXY A55</span>
+            <span class="tag-cuotas">12 cuotas de <s>$158.250</s></span>
+            <span class="tag-price">$1.299.000</span>
+            <span class="tag-interes">con 0% interés</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=220&h=180&fit=crop" class="banner-prod-img" alt="Samsung"/>
+        </div>
+        <div class="banner-center">
+          <div class="banner-event-tag" style="background:#ffe600;color:#000;">ENVÍO GRATIS</div>
+          <h1 class="banner-main-title">Tecnología top</h1>
+          <div class="banner-discount" style="color:#ffe600;">30%DCTO</div>
+          <button class="banner-btn">Ver smartphones</button>
+        </div>
+        <div class="banner-products-right">
+          <div class="banner-product-tag">
+            <span class="tag-name">AUDÍFONOS SONY WH-1000XM5</span>
+            <span class="tag-cuotas">12 cuotas de <s>$108.250</s></span>
+            <span class="tag-price">$899.000</span>
+            <span class="tag-interes">con 0% interés</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=220&h=180&fit=crop" class="banner-prod-img" alt="Sony"/>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="banner-slide" style="background: linear-gradient(120deg, #1a2a50 0%, #1a3a80 50%, #1a2a50 100%);">
+        <div class="banner-products-left">
+          <div class="banner-product-tag">
+            <span class="tag-name">APPLE WATCH SERIES 9 GPS 41MM</span>
+            <span class="tag-cuotas">12 cuotas de <s>$166.583</s></span>
+            <span class="tag-price">$1.599.000</span>
+            <span class="tag-interes">con 0% interés</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=220&h=180&fit=crop" class="banner-prod-img" alt="Watch"/>
+        </div>
+        <div class="banner-center">
+          <div class="banner-event-tag" style="background:#ff4040;">SÚPER OFERTA</div>
+          <h1 class="banner-main-title">Moda y estilo</h1>
+          <div class="banner-discount">40%DCTO</div>
           <button class="banner-btn">Aprovechar</button>
         </div>
-        <div class="banner-image">💻</div>
+        <div class="banner-products-right">
+          <div class="banner-product-tag">
+            <span class="tag-name">CÁMARA CANON EOS R50 MIRRORLESS</span>
+            <span class="tag-cuotas">12 cuotas de <s>$291.583</s></span>
+            <span class="tag-price">$2.624.250</span>
+            <span class="tag-interes">con 0% interés</span>
+          </div>
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=220&h=180&fit=crop" class="banner-prod-img" alt="Canon"/>
+        </div>
       </div>
+
     </div>
     <div class="banner-dots" id="banner-dots">
       <button class="dot active" onclick="goToSlide(0)"></button>
@@ -89,6 +150,49 @@
     </div>
     <button class="banner-arrow prev" onclick="prevSlide()">‹</button>
     <button class="banner-arrow next" onclick="nextSlide()">›</button>
+  </section>
+
+  <!-- ===== SERVICIOS RÁPIDOS (debajo del banner como el original) ===== -->
+  <section class="quick-services">
+    <div class="container">
+      <div class="quick-services-grid">
+        <div class="qs-card">
+          <div class="qs-icon">
+            <svg width="48" height="48" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="12" fill="#FFF9C4"/><path d="M12 20h40l-4 24H16L12 20z" fill="#FFD600" stroke="#E6B800" stroke-width="2"/><path d="M22 20l2-8h16l2 8" stroke="#E6B800" stroke-width="2" fill="none"/><circle cx="24" cy="50" r="3" fill="#333"/><circle cx="42" cy="50" r="3" fill="#333"/><path d="M28 32l4 4 8-8" stroke="#1a9e5c" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <div><strong>Envío gratis</strong><p>Beneficio por ser tu primera compra.</p></div>
+          <a href="#" class="qs-link">Mostrar productos</a>
+        </div>
+        <div class="qs-card">
+          <div class="qs-icon">
+            <svg width="48" height="48" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="12" fill="#FFF9C4"/><rect x="14" y="16" width="36" height="28" rx="4" fill="#FFD600" stroke="#E6B800" stroke-width="2"/><circle cx="32" cy="26" r="6" fill="#fff"/><path d="M20 44c0-6.627 5.373-8 12-8s12 1.373 12 8" stroke="#fff" stroke-width="2" fill="none"/></svg>
+          </div>
+          <div><strong>Ingresa a tu cuenta</strong><p>Disfruta de ofertas y compra sin límites.</p></div>
+          <a href="#" class="qs-link">Ingresar a tu cuenta</a>
+        </div>
+        <div class="qs-card">
+          <div class="qs-icon">
+            <svg width="48" height="48" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="12" fill="#FFF9C4"/><rect x="10" y="20" width="44" height="28" rx="5" fill="#FFD600" stroke="#E6B800" stroke-width="2"/><rect x="10" y="28" width="44" height="8" fill="#E6B800"/><rect x="18" y="38" width="12" height="4" rx="2" fill="#fff"/></svg>
+          </div>
+          <div><strong>Medios de pago</strong><p>Paga tus compras de forma rápida y segura.</p></div>
+          <a href="#" class="qs-link">Conocer medios de pago</a>
+        </div>
+        <div class="qs-card">
+          <div class="qs-icon">
+            <svg width="48" height="48" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="12" fill="#FFF9C4"/><circle cx="32" cy="32" r="18" fill="#FFD600" stroke="#E6B800" stroke-width="2"/><text x="32" y="37" text-anchor="middle" font-size="16" font-weight="bold" fill="#333" font-family="Arial">$</text><path d="M20 20l24 24M44 20L20 44" stroke="#E6B800" stroke-width="0"/></svg>
+          </div>
+          <div><strong>Menos de $40.000</strong><p>Descubre productos con precios bajos.</p></div>
+          <a href="#" class="qs-link">Mostrar productos</a>
+        </div>
+        <div class="qs-card">
+          <div class="qs-icon">
+            <svg width="48" height="48" viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="12" fill="#FFF9C4"/><path d="M32 12l5 10 11 1.5-8 7.5 2 11L32 37l-10 5 2-11-8-7.5L27 22z" fill="#FFD600" stroke="#E6B800" stroke-width="2"/><path d="M24 48h16M28 52h8" stroke="#E6B800" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div><strong>Más vendidos</strong><p>Explora los productos que son tendencia.</p></div>
+          <a href="#" class="qs-link">Ir a Más vendidos</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ===== BUSCADOR DESTACADO ===== -->
@@ -206,32 +310,32 @@
       <h2 class="section-title">Nuestros servicios</h2>
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon">🚚</div>
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#e8f5e9"/><path d="M6 26h22v-8l-6-6H6v14z" fill="#1a9e5c"/><path d="M28 18l4 4v4h-4" fill="#0d7a45"/><circle cx="11" cy="28" r="3" fill="#fff" stroke="#1a9e5c" stroke-width="1.5"/><circle cx="25" cy="28" r="3" fill="#fff" stroke="#1a9e5c" stroke-width="1.5"/></svg></div>
           <h3>Envío gratis</h3>
           <p>En miles de productos a todo Colombia. Rápido y seguro a la puerta de tu casa.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">💳</div>
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#e3f2fd"/><rect x="6" y="12" width="28" height="18" rx="3" fill="#3483fa"/><rect x="6" y="18" width="28" height="5" fill="#1a5cbf"/><rect x="10" y="24" width="8" height="2.5" rx="1" fill="#fff"/></svg></div>
           <h3>Cuotas sin interés</h3>
           <p>Paga en hasta 12 cuotas sin interés con todas las tarjetas de crédito.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">🔒</div>
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#fff3e0"/><rect x="12" y="20" width="16" height="12" rx="2" fill="#ff9800"/><path d="M15 20v-4a5 5 0 0110 0v4" stroke="#ff9800" stroke-width="2" fill="none"/><circle cx="20" cy="26" r="2" fill="#fff"/></svg></div>
           <h3>Compra segura</h3>
           <p>Tu dinero protegido hasta recibir el producto. Garantía de devolución.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">⭐</div>
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#fff9c4"/><path d="M20 8l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z" fill="#FFD600" stroke="#F9A825" stroke-width="1"/></svg></div>
           <h3>Vendedores verificados</h3>
           <p>Más de 1 millón de vendedores verificados con calificaciones reales.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">📦</div>
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#f3e5f5"/><rect x="8" y="16" width="24" height="16" rx="2" fill="#9c27b0"/><path d="M8 16l4-6h16l4 6" fill="#7b1fa2"/><path d="M14 16v4h12v-4" fill="#ce93d8"/></svg></div>
           <h3>Mercado Shops</h3>
           <p>Crea tu tienda online gratis y vende a millones de compradores.</p>
         </div>
         <div class="service-card reveal">
-          <div class="service-icon">💰</div>
+          <div class="service-icon"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#e8f5e9"/><circle cx="20" cy="20" r="12" fill="#1a9e5c"/><text x="20" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff" font-family="Arial">$</text></svg></div>
           <h3>Mercado Pago</h3>
           <p>La billetera digital más usada de Colombia. Pagos rápidos y seguros.</p>
         </div>
