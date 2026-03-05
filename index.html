@@ -1,129 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MercadoLibre Colombia – Envíos a todo el país</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MercadoLibre Clone</title>
 
-  <!-- CSS CORREGIDO -->
-  <link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="styles.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <header id="navbar">
-  <div class="nav-top">
-    <div class="nav-container">
 
-      <a href="#" class="brand">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MercadoLibre_new.svg/320px-MercadoLibre_new.svg.png" class="brand-img"/>
-      </a>
+<div class="nav-container">
 
-      <div class="nav-location">
-        <span>Ingresa tu <strong>ubicación</strong></span>
-      </div>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/MercadoLibre_new.svg">
 
-      <div class="search-wrapper">
+<div class="search-wrapper">
 
-        <form class="search-form" onsubmit="handleSearch(event)">
-          <input 
-          type="text"
-          id="search-input"
-          class="search-input"
-          placeholder="Buscar productos, marcas y más..."
-          />
+<form onsubmit="handleSearch(event)">
 
-          <button class="search-btn">
-            🔍
-          </button>
-        </form>
+<input 
+type="text"
+id="search-input"
+placeholder="Buscar productos, marcas y más..."
+>
 
-        <div id="search-suggestions" class="search-suggestions"></div>
+<button type="submit">🔍</button>
 
-      </div>
+</form>
 
-      <div class="nav-icons">
-        <div class="cart">
-          🛒
-          <span id="cart-badge">0</span>
-        </div>
-      </div>
+<div id="search-suggestions"></div>
 
-    </div>
-  </div>
+</div>
+
+<div class="cart">
+🛒 <span id="cart-badge">0</span>
+</div>
+
+</div>
+
 </header>
 
 
-<!-- BANNER -->
 <section class="banner">
 
-  <div class="banner-slide active">
-    <h2>Ofertas increíbles</h2>
-  </div>
+<div class="banner-slide active">
+<h2>Ofertas increíbles</h2>
+</div>
 
-  <div class="banner-slide">
-    <h2>Descuentos en tecnología</h2>
-  </div>
+<div class="banner-slide">
+<h2>Tecnología con descuento</h2>
+</div>
 
-  <div class="banner-slide">
-    <h2>Envíos gratis a todo el país</h2>
-  </div>
+<div class="banner-slide">
+<h2>Envíos gratis a todo el país</h2>
+</div>
 
 </section>
 
 
 
-<!-- PRODUCTOS -->
 <section class="products">
 
-  <article class="product-card">
-    <div class="product-img">📱</div>
-    <div class="product-info">
-      <p class="product-name">Smartphone Samsung Galaxy</p>
-      <p class="product-price">$1.299.000</p>
+<article class="product-card">
 
-      <button onclick="addToCart('Samsung Galaxy')" class="btn-add-cart">
-        Agregar al carrito
-      </button>
+<div class="product-img">📱</div>
 
-    </div>
-  </article>
+<h3>Samsung Galaxy</h3>
+
+<p class="price">$1.299.000</p>
+
+<button onclick="addToCart('Samsung Galaxy')">
+Agregar al carrito
+</button>
+
+</article>
 
 
-  <article class="product-card">
-    <div class="product-img">💻</div>
-    <div class="product-info">
-      <p class="product-name">Laptop Lenovo</p>
-      <p class="product-price">$1.749.000</p>
+<article class="product-card">
 
-      <button onclick="addToCart('Laptop Lenovo')" class="btn-add-cart">
-        Agregar al carrito
-      </button>
+<div class="product-img">💻</div>
 
-    </div>
-  </article>
+<h3>Laptop Lenovo</h3>
+
+<p class="price">$1.749.000</p>
+
+<button onclick="addToCart('Laptop Lenovo')">
+Agregar al carrito
+</button>
+
+</article>
+
+
+<article class="product-card">
+
+<div class="product-img">🎧</div>
+
+<h3>Audífonos Sony</h3>
+
+<p class="price">$399.000</p>
+
+<button onclick="addToCart('Audífonos Sony')">
+Agregar al carrito
+</button>
+
+</article>
 
 </section>
-
-
-
-<!-- RESULTADOS DE BÚSQUEDA -->
-<section id="search-results" style="display:none">
-
-  <h2 id="search-results-title"></h2>
-
-  <div id="search-results-grid"></div>
-
-</section>
-
 
 
 <div id="toast"></div>
 
 
-<!-- JS CORREGIDO -->
 <script src="app.js"></script>
 
 </body>

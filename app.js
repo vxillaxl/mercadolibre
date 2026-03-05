@@ -1,6 +1,6 @@
 let cartCount = 0;
 
-const cartBadge = document.getElementById('cart-badge');
+const cartBadge = document.getElementById("cart-badge");
 
 function addToCart(product){
 
@@ -33,18 +33,18 @@ toast.style.display="none";
 
 
 const suggestions = [
-'Smartphones Samsung',
-'Laptops Lenovo',
-'Audífonos Sony',
-'Smart TV',
-'Apple Watch'
+"Smartphones Samsung",
+"Laptops Lenovo",
+"Audífonos Sony",
+"Smart TV",
+"Apple Watch"
 ];
 
+const searchInput = document.getElementById("search-input");
 
-const searchInput = document.getElementById('search-input');
-const suggestionsBox = document.getElementById('search-suggestions');
+const suggestionsBox = document.getElementById("search-suggestions");
 
-searchInput.addEventListener('input',()=>{
+searchInput.addEventListener("input",()=>{
 
 const val = searchInput.value.toLowerCase();
 
