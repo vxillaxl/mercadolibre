@@ -20,7 +20,7 @@ a{text-decoration:none;color:inherit;}
 
 /* Logo */
 .brand{flex-shrink:0;display:flex;align-items:center;}
-.brand-img{height:52px;width:auto;}
+.brand-img{height:70px;width:auto;}
 
 /* Ubicación */
 .nav-location{display:flex;align-items:flex-start;gap:4px;font-size:.77rem;color:#333;flex-shrink:0;cursor:pointer;white-space:nowrap;}
